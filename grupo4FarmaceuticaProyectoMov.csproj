@@ -63,9 +63,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Views\vPrueba.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
+	  <Folder Include="Models\" />
+	  <Folder Include="Views\" />
 	</ItemGroup>
 
 </Project>
