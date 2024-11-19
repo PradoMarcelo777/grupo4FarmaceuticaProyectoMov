@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace grupo4FarmaceuticaProyectoMov.utils
+namespace grupo4FarmaceuticaProyectoMov.Utils
 {
-    public static class Config
+    internal class Config
     {
         public static string LocalMachineIp = "192.168.100.35";
 
