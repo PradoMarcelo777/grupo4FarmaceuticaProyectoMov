@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="grupo4FarmaceuticaProyectoMov.Views.vConsultas"
+             Title="vConsultas">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <Label 
+                 Text="Consulta ChatGPT"
+                 FontSize="24"
+                 TextColor="White"
+                 BackgroundColor="Blue"
+                 HorizontalOptions="FillAndExpand"
+                 HorizontalTextAlignment="Center"
+                 Padding="20" />
+
+            <Label x:Name="lblBienvenido"
+                Text="Bienvenido: [Nombre y Apellido]"
+                FontSize="20"
+                FontAttributes="Bold"
+                TextColor="Blue"
+                HorizontalOptions="End" />
+
+
+            <Label x:Name="lblRespuesta"
+               Text="Aquí se mostrará la respuesta"
+               FontSize="16"
+               TextColor="Black"
+               BackgroundColor="#F1F1F1"
+               Padding="10"
+               VerticalOptions="StartAndExpand"/>
+
+
+            <Entry x:Name="txtConsulta"
+               Placeholder="Escribe tu consulta aquí"
+               Margin="0,10"
+               FontSize="18"/>
+
+
+            <Grid RowSpacing="10" ColumnSpacing="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+
+                <Button Text="Consultar"
+                        FontSize="18"
+                        BackgroundColor="#4CAF50"
+                        TextColor="White"
+                        Clicked="Button_Clicked"
+                        Grid.Row="0"
+                        Grid.Column="0"/>
+
+
+                <Button x:Name="btnGuardar"
+                        Text="Guardar"
+                        FontSize="18"
+                        BackgroundColor="#007AFF"
+                        TextColor="White"
+                        Clicked="btnGuardar_Clicked"
+                        Grid.Row="0"
+                        Grid.Column="1"/>
+
+
+            </Grid>
+
+            <Button x:Name="btnSalir"
+                  Text="Salir"
+                  BackgroundColor="#F44336"
+                  TextColor="White"
+                  FontSize="16"
+                  CornerRadius="8"
+                  Clicked="btnSalir_Clicked"
+                  Grid.Row="1"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
