@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace grupo4FarmaceuticaProyectoMov.Models
 {
-    internal class Rol
+    public class Rol
     {
+        public int id { get; set; }
+        public string nombre { get; set; }
     }
 }
