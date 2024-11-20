@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace grupo4FarmaceuticaProyectoMov.Models
 {
-    internal class MedicamentoDto
+    public class MedicamentoDto
     {
+        public int Id { get; set; }
+        public string nombreMedicamento { get; set; }
+        public string presentacion { get; set; }
+        public string indicaciones { get; set; }
+        public DateTime fechaExpiracion { get; set; }
+        public string ubicacionFarmacia { get; set; }
+        public decimal precio { get; set; }
     }
 }
