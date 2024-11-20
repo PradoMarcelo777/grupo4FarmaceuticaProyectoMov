@@ -37,4 +37,82 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
+
+            <!-- Campo para mostrar el ID del Medicamento (no visible) -->
+            <Label x:Name="lblIdMedicamento" 
+               IsVisible="False"
+               Grid.Row="0" />
+
+            <!-- Nombre del Medicamento -->
+            <Entry x:Name="txtNombreMedicamento" 
+           Grid.Row="1" 
+           Placeholder="Nombre del Medicamento" 
+           FontSize="16" />
+
+            <!-- Presentación del Medicamento -->
+            <Entry x:Name="txtPresentacion" 
+           Grid.Row="2" 
+           Placeholder="Presentación" 
+           FontSize="16" />
+
+            <!-- Indicaciones del Medicamento -->
+            <Entry x:Name="txtIndicaciones" 
+           Grid.Row="3" 
+           Placeholder="Indicaciones" 
+           FontSize="16" />
+
+            <!-- Fecha de Expiración -->
+            <DatePicker x:Name="datepickerFechaExpiracion" 
+                    Grid.Row="4" 
+                    Format="dd/MM/yyyy"  
+                    FontSize="16"
+                    WidthRequest="300"
+                    HorizontalOptions="Start" 
+                    DateSelected="datepickerFechaExpiracion_DateSelected" />
+
+            <!-- Mostrar la fecha seleccionada -->
+            <Label x:Name="lblFechaSeleccionada"
+               Grid.Row="5"
+               Text="Selecciona una fecha"
+               FontSize="16"
+               TextColor="Blue"
+               HorizontalOptions="Center" />
+
+            <!-- Ubicación en la farmacia -->
+            <Entry x:Name="txtUbicacionFarmacia" 
+           Grid.Row="6" 
+           Placeholder="Ubicación en la farmacia" 
+           FontSize="16" />
+
+            <!-- Precio -->
+            <Entry x:Name="txtPrecio" 
+           Grid.Row="7" 
+           Placeholder="Precio" 
+           FontSize="16"
+           Keyboard="Numeric" />
+
+        </Grid>
+
+        <!-- Botón para actualizar Medicamento -->
+        <Button x:Name="btnActualizar"
+        Text="Actualizar Medicamento"
+        BackgroundColor="#28A745" 
+        TextColor="White"
+        FontSize="16"
+        CornerRadius="8"
+        Clicked="btnActualizar_Clicked" />
+
+        <!-- Botón para eliminar Medicamento -->
+        <Button x:Name="btnEliminar"
+        Text="Eliminar Medicamento"
+        BackgroundColor="#DC3545" 
+        TextColor="White"
+        FontSize="16"
+        CornerRadius="8"
+        Clicked="btnEliminar_Clicked" />
+
+        <Button x:Name="btnSalir" Text="Salir" BackgroundColor="#F44336" TextColor="White" FontSize="16" CornerRadius="8" Clicked="btnSalir_Clicked" />
+
+
+    </VerticalStackLayout>
 </ContentView>
