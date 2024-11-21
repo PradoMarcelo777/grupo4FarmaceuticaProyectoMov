@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="grupo4FarmaceuticaProyectoMov.Views.Opciones"
+             Title="Opciones">
+    <VerticalStackLayout Padding="10" Spacing="20">
+      
+        <Grid Padding="5" RowSpacing="15" ColumnSpacing="1">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+           
+            <Image x:Name="imgLogo"
+                   Source="logofarma.jpg"
+                   Aspect="AspectFit"
+                   HeightRequest="150"
+                   Grid.Row="0"
+                   Grid.Column="0" />
+
+           
+            <Label x:Name="lblBienvenido"
+                   Text="Bienvenido: [Nombre y Apellido]"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   TextColor="Blue"
+                   HorizontalOptions="Center"
+                   Grid.Row="1"
+                   Grid.Column="0" />
+
+           
+            <Button x:Name="btnMedicamentos"
+                    Text="Medicamentos"
+                    BackgroundColor="#007AFF"
+                    TextColor="White"
+                    FontSize="16"
+                    CornerRadius="8"
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Clicked="btnMedicamentos_Clicked" />
+
+            
+            <Button x:Name="btnConsulta"
+                    Text="Consulta"
+                    BackgroundColor="#4CAF50"
+                    TextColor="White"
+                    FontSize="16"
+                    CornerRadius="8"
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Clicked="btnConsulta_Clicked" />
+
+            
+            <Button x:Name="btnHistorial"
+                    Text="Historial"
+                    BackgroundColor="#FFC107"
+                    TextColor="White"
+                    FontSize="16"
+                    CornerRadius="8"
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Clicked="btnHistorial_Clicked" />
+
+            
+            <Button x:Name="btnSalir"
+                    Text="Salir"
+                    BackgroundColor="#F44336"
+                    TextColor="White"
+                    FontSize="16"
+                    CornerRadius="8"
+                    Grid.Row="5"
+                    Grid.Column="0"
+                    Clicked="btnSalir_Clicked" />
+        </Grid>
+
+    </VerticalStackLayout>
+</ContentPage>
