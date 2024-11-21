@@ -102,6 +102,7 @@ public partial class Login : ContentPage
 
             // Redirigir a la p�gina de registro (vUsuario) y pasar el objeto Usuario
             await Navigation.PushAsync(new vUsuarios(usuario));
+            
         }
         catch (Exception ex)
         {
