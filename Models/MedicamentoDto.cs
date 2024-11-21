@@ -8,7 +8,7 @@ namespace grupo4FarmaceuticaProyectoMov.Models
 {
     public class MedicamentoDto
     {
-        public int Id { get; set; }
+        public int id { get; set; }
         public string nombreMedicamento { get; set; }
         public string presentacion { get; set; }
         public string indicaciones { get; set; }

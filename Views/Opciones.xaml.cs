@@ -49,7 +49,7 @@ public partial class Opciones : ContentPage
             apellido = ApellidoUsuario
         };
 
-        await Navigation.PushAsync(new vConsulta(usuario));
+        await Navigation.PushAsync(new vConsultas(usuario));
     }
 
     private async void btnHistorial_Clicked(object sender, EventArgs e)

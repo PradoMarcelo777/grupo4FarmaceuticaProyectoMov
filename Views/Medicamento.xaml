@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="grupo4FarmaceuticaProyectoMov.Views.Medicamento"
-             Title="Medicamento">
+             x:Class="grupo4FarmaceuticaProyectoMov.Views.Medicamento">
     <VerticalStackLayout Spacing="15" Padding="15">
         <Label 
             Text="Registrar Medicamento0"
@@ -21,8 +20,8 @@
                HorizontalOptions="Center"
                Grid.Row="1"
                Grid.Column="0"/>
-        <Grid RowSpacing="10" ColumnSpacing="10"
-              <Grid.RowDefinitions>
+        <Grid RowSpacing="10" ColumnSpacing="10">
+            <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -57,7 +56,7 @@
                         FontSize="16"
                         WidthRequest="300"
                         HorizontalOptions="Start"
-                        DateSelected="datepickerFechaExpiracion_DateSelect"/>
+                        DateSelected="datepickerFechaExpiracion_DateSelected"/>
             <Label x:Name="lblFechaSeleccionada"
                    Grid.Row="4"
                    Text="Selecciona una Fecha"

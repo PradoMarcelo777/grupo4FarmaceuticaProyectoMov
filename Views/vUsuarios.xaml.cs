@@ -1,6 +1,7 @@
 ﻿namespace grupo4FarmaceuticaProyectoMov.Views;
 using grupo4FarmaceuticaProyectoMov.Models;
 using grupo4FarmaceuticaProyectoMov.Utils;
+using Newtonsoft.Json;
 using System.Text;
 
 public partial class vUsuarios : ContentPage

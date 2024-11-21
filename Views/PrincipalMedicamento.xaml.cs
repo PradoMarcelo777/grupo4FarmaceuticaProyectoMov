@@ -6,7 +6,7 @@ using grupo4FarmaceuticaProyectoMov.Models;
 
 namespace grupo4FarmaceuticaProyectoMov.Views;
 
-public partial class PrincipalMedicamento : ContentView
+public partial class PrincipalMedicamento : ContentPage
 {
     // Propiedades para almacenar los datos del usuario
     public int IdUsuario { get; set; }

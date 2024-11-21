@@ -5,7 +5,7 @@ using System.Text;
 
 namespace grupo4FarmaceuticaProyectoMov.Views;
 
-public partial class vActualizarEliminar : ContentView
+public partial class vActualizarEliminar : ContentPage
 {
     
     private Usuario usuarioActualizar { get; set; }
