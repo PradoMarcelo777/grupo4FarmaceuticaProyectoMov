@@ -183,6 +183,10 @@ public partial class vConsultas : ContentPage
             if (response.IsSuccessStatusCode)
             {
                 await DisplayAlert("Éxito", "La consulta ha sido guardada correctamente.", "OK");
+                // Reiniciar los valores de los campos
+                txtConsulta.Text = string.Empty;               // Limpiar el Entry
+                lblRespuesta.FormattedText = null;             // Limpiar el FormattedText
+                lblRespuesta.Text = "Aquí se mostrará la respuesta"; // Mostrar mensaje predeterminado
             }
             else
             {
