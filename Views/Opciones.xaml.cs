@@ -24,6 +24,11 @@ public partial class Opciones : ContentPage
         NavigationPage.SetHasBackButton(this, false);
 
     }
+    protected override bool OnBackButtonPressed()
+    {
+        // No hacer nada para deshabilitar el retroceso
+        return true; // True indica que el evento est? controlado y se ignora la acci?n predeterminada
+    }
 
     private async void btnMedicamentos_Clicked(object sender, EventArgs e)
     {
@@ -49,7 +54,7 @@ public partial class Opciones : ContentPage
             apellido = ApellidoUsuario
         };
 
-        await Navigation.PushAsync(new vConsulta(usuario));
+        await Navigation.PushAsync(new vConsultas(usuario));
     }
 
     private async void btnHistorial_Clicked(object sender, EventArgs e)
@@ -68,12 +73,25 @@ public partial class Opciones : ContentPage
     private async void btnSalir_Clicked(object sender, EventArgs e)
     {
 
+        bool confirm = await DisplayAlert(
+         "Cerrar Sesión",
+         "Estás seguro de que deseas cerrar tu sesión?",
+         "Sí",
+         "No"
+     );
 
-        
+        if (!confirm)
+        {
+            // Si el usuario selecciona "No", salir del m?todo
+            return;
+        }
+
         Preferences.Remove("username");
         Preferences.Remove("password");
 
-        
+        await DisplayAlert("Sesión Cerrada", "Tu sesión se ha cerrado correctamente.", "OK");
+
+
         await Navigation.PushAsync(new Login());
     }
 }

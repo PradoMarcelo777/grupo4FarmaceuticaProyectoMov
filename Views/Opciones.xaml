@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="grupo4FarmaceuticaProyectoMov.Views.Opciones"
-             Title="Opciones">
+             x:Class="grupo4FarmaceuticaProyectoMov.Views.Opciones">
     <VerticalStackLayout Padding="10" Spacing="20">
       
         <Grid Padding="5" RowSpacing="15" ColumnSpacing="1">
@@ -73,7 +72,7 @@
 
             
             <Button x:Name="btnSalir"
-                    Text="Salir"
+                    Text="Cerrar Sesion"
                     BackgroundColor="#F44336"
                     TextColor="White"
                     FontSize="16"

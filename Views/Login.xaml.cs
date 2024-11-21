@@ -1,7 +1,8 @@
 ﻿using grupo4FarmaceuticaProyectoMov.Utils;
 using System.Text;
 using grupo4FarmaceuticaProyectoMov.Models;
-using System.Text;
+using Newtonsoft.Json;
+
 
 
 namespace grupo4FarmaceuticaProyectoMov.Views;
@@ -13,6 +14,12 @@ public partial class Login : ContentPage
 		InitializeComponent();
         // Deshabilitar la flecha de retroceso en la p�gina de Login
         NavigationPage.SetHasBackButton(this, false);
+    }
+
+    protected override bool OnBackButtonPressed()
+    {
+        // No hacer nada para deshabilitar el retroceso
+        return true; // True indica que el evento est� controlado y se ignora la acci�n predeterminada
     }
 
     private async void btnIniciarSesion_Clicked(object sender, EventArgs e)
@@ -27,7 +34,7 @@ public partial class Login : ContentPage
         // Validar contrase�a
         if (string.IsNullOrWhiteSpace(txtContrasena.Text))
         {
-            await DisplayAlert("Error", "Ingresa tu contrase�a.", "Cerrar");
+            await DisplayAlert("Error", "Ingresa tu contraseña.", "Cerrar");
             return;
         }
 
@@ -73,7 +80,7 @@ public partial class Login : ContentPage
                 else
                 {
                     // Mostrar mensaje de error si el login falla
-                    await DisplayAlert("Error", "Usuario o contrase�a incorrectos", "OK");
+                    await DisplayAlert("Error", "Usuario o contraseña incorrectos", "OK");
                 }
             }
         }
@@ -92,7 +99,7 @@ public partial class Login : ContentPage
             // Crear un objeto Usuario vac�o o con valores por defecto
             var usuario = new Usuario
             {
-                Id = 0, // Si es un nuevo usuario, puedes poner 0 o un valor predeterminado
+                id = 0, // Si es un nuevo usuario, puedes poner 0 o un valor predeterminado
                 nombre = "",
                 apellido = "",
                 username = "",

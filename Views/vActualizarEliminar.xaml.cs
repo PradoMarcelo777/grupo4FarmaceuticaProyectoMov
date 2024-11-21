@@ -5,7 +5,7 @@ using System.Text;
 
 namespace grupo4FarmaceuticaProyectoMov.Views;
 
-public partial class vActualizarEliminar : ContentView
+public partial class vActualizarEliminar : ContentPage
 {
     
     private Usuario usuarioActualizar { get; set; }
@@ -136,7 +136,7 @@ public partial class vActualizarEliminar : ContentView
         await Navigation.PushAsync(opciones);
     }
 
-    private void btnEliminar_Clicked(object sender, EventArgs e)
+    private async void btnEliminar_Clicked(object sender, EventArgs e)
     {
         // Confirmar si el usuario realmente quiere eliminar el medicamento
         bool confirmacion = await DisplayAlert("Confirmar Eliminación", "¿Estás seguro de que deseas eliminar este medicamento?", "Sí", "No");
