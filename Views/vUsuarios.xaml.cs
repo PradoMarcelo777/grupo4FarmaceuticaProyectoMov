@@ -23,6 +23,12 @@ public partial class vUsuarios : ContentPage
         CargarRoles();
     }
 
+    protected override bool OnBackButtonPressed()
+    {
+        // No hacer nada para deshabilitar el retroceso
+        return true; // True indica que el evento est� controlado y se ignora la acci�n predeterminada
+    }
+
     private async void CargarRoles()
     {
         try
@@ -117,13 +123,13 @@ public partial class vUsuarios : ContentPage
 
             if (string.IsNullOrWhiteSpace(txtEmail.Text) || !IsValidEmail(txtEmail.Text))
             {
-                await DisplayAlert("Error", "Debe ingresar el correo electr�nico empresarial @farmaec.com valido.", "OK");
+                await DisplayAlert("Error", "Debe ingresar el correo electrónico empresarial @farmaec.com valido.", "OK");
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(txtEmail.Text))
             {
-                await DisplayAlert("Error", "Ingresa un correo electr�nico v�lido.", "OK");
+                await DisplayAlert("Error", "Ingresa un correo electr�nico válido.", "OK");
                 return;
             }
 
@@ -177,7 +183,7 @@ public partial class vUsuarios : ContentPage
 
                 if (response.IsSuccessStatusCode)
                 {
-                    await DisplayAlert("�xito", "Usuario creado con �xito", "OK");
+                    await DisplayAlert("Exito", "Usuario creado con éxito", "OK");
 
                     await Navigation.PushAsync(new Login());
                 }
@@ -198,7 +204,11 @@ public partial class vUsuarios : ContentPage
 
     private async void btnSalir_Clicked(object sender, EventArgs e)
     {
-        await Navigation.PopToRootAsync();
+        Preferences.Remove("username");
+        Preferences.Remove("password");
+
+        // Regresar a la p�gina de Login
+        await Navigation.PushAsync(new Login());
     }
 
     private bool IsValidEmail(string email)

@@ -182,7 +182,7 @@ public partial class vConsultas : ContentPage
 
             if (response.IsSuccessStatusCode)
             {
-                await DisplayAlert("?xito", "La consulta ha sido guardada correctamente.", "OK");
+                await DisplayAlert("Éxito", "La consulta ha sido guardada correctamente.", "OK");
             }
             else
             {

@@ -16,6 +16,12 @@ public partial class Login : ContentPage
         NavigationPage.SetHasBackButton(this, false);
     }
 
+    protected override bool OnBackButtonPressed()
+    {
+        // No hacer nada para deshabilitar el retroceso
+        return true; // True indica que el evento est� controlado y se ignora la acci�n predeterminada
+    }
+
     private async void btnIniciarSesion_Clicked(object sender, EventArgs e)
     {
         // Validar nombre de usuario
@@ -28,7 +34,7 @@ public partial class Login : ContentPage
         // Validar contrase�a
         if (string.IsNullOrWhiteSpace(txtContrasena.Text))
         {
-            await DisplayAlert("Error", "Ingresa tu contrase�a.", "Cerrar");
+            await DisplayAlert("Error", "Ingresa tu contraseña.", "Cerrar");
             return;
         }
 
@@ -74,7 +80,7 @@ public partial class Login : ContentPage
                 else
                 {
                     // Mostrar mensaje de error si el login falla
-                    await DisplayAlert("Error", "Usuario o contrase�a incorrectos", "OK");
+                    await DisplayAlert("Error", "Usuario o contraseña incorrectos", "OK");
                 }
             }
         }
