@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="grupo4FarmaceuticaProyectoMov.Views.Login"
+             Title="Login">
+    <VerticalStackLayout>
+        <Grid Padding="5" RowSpacing="15" ColumnSpacing="1">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+
+            <Image x:Name="imgLogo"
+                   Source="logofarma.jpg"
+                   Aspect="AspectFit"
+                   HeightRequest="150"
+                   Grid.Row="0"
+                   Grid.Column="0"/>
+
+
+            <Label x:Name="lblTitulo"
+                   Text="Iniciar Sesión"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   Grid.Row="1"
+                   Grid.Column="0"
+                   TextColor="Blue"/>
+
+
+            <Entry x:Name="txtUsuario"
+                   Placeholder="Ingresar Usuario"
+                   FontSize="16"
+                   Grid.Row="2"
+                   Grid.Column="0" />
+
+
+            <Entry x:Name="txtContrasena"
+                   Placeholder="Ingresar Contraseña"
+                   IsPassword="True"
+                   FontSize="16"
+                   Grid.Row="3"
+                   Grid.Column="0" />
+
+
+            <Button x:Name="btnIniciarSesion"
+                    Text="Iniciar Sesión"
+                    BackgroundColor="#007AFF"
+                    TextColor="White"
+                    FontSize="16"
+                    CornerRadius="8"
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Clicked="btnIniciarSesion_Clicked"/>
+
+
+            <Button x:Name="btnRegistrarse"
+                    Text="Registrarse"
+                    BackgroundColor="#4CAF50"
+                    TextColor="White"
+                    FontSize="16"
+                    CornerRadius="8"
+                    Grid.Row="5"
+                    Grid.Column="0"
+                    Clicked="btnRegistrarse_Clicked"/>
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>
