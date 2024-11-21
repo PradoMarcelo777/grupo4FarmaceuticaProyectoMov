@@ -72,6 +72,9 @@
 	  <MauiXaml Update="Views\Opciones.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\vRegistro.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\zvprueba.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

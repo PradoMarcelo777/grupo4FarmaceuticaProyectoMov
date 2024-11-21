@@ -31,7 +31,7 @@ public partial class vActualizarEliminar : ContentView
         
     
 
-    private void btnActualizar_Clicked(object sender, EventArgs e)
+    private async void btnActualizar_Clicked(object sender, EventArgs e)
     {
         // Validar nombre del medicamento
         if (string.IsNullOrWhiteSpace(txtNombreMedicamento.Text))
@@ -123,14 +123,14 @@ public partial class vActualizarEliminar : ContentView
         }
     }
 
-    private void datepickerFechaExpiracion_DateSelected(object sender, DateChangedEventArgs e)
+    private async void datepickerFechaExpiracion_DateSelected(object sender, DateChangedEventArgs e)
     {
         // Lógica cuando la fecha cambia
         lblFechaSeleccionada.Text = $"Fecha seleccionada: {e.NewDate:dd/MM/yyyy}";
     }
 
 
-    private void btnSalir_Clicked(object sender, EventArgs e)
+    private async void btnSalir_Clicked(object sender, EventArgs e)
     {
       var opciones = new Opciones(usuarioActualizar);
         await Navigation.PushAsync(opciones);
