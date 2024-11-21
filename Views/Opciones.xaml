@@ -72,7 +72,7 @@
 
             
             <Button x:Name="btnSalir"
-                    Text="Salir"
+                    Text="Cerrar Sesion"
                     BackgroundColor="#F44336"
                     TextColor="White"
                     FontSize="16"

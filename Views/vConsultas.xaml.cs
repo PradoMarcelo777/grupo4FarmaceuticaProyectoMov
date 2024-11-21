@@ -192,7 +192,7 @@ public partial class vConsultas : ContentPage
             {
                 string errorContent = await response.Content.ReadAsStringAsync();
                 Console.WriteLine($"Error al guardar la consulta: {errorContent}");
-                await DisplayAlert("Error", "No se pudo guardar la consulta. Int?ntalo m?s tarde.", "OK");
+                await DisplayAlert("Error", "No se pudo guardar la consulta. Intentalo más tarde.", "OK");
             }
         }
         catch (Exception ex)

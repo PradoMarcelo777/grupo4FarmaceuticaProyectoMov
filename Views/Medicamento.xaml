@@ -52,7 +52,7 @@
 
             <DatePicker x:Name="datepickerFechaExpiracion"
                         Grid.Row="3"
-                        Format="dd/mm/yyyy"
+                        Format="dd/MM/yyyy"
                         FontSize="16"
                         WidthRequest="300"
                         HorizontalOptions="Start"

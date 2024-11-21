@@ -29,11 +29,6 @@ public partial class vRegistro : ContentPage
         ObtenerConsultas();
     }
 
-    protected override bool OnBackButtonPressed()
-    {
-        // No hacer nada para deshabilitar el retroceso
-        return true; // True indica que el evento est? controlado y se ignora la acci?n predeterminada
-    }
 
     private async void ObtenerConsultas()
     {
