@@ -3,10 +3,97 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="grupo4FarmaceuticaProyectoMov.Views.Medicamento"
              Title="Medicamento">
-    <VerticalStackLayout>
+    <VerticalStackLayout Spacing="15" Padding="15">
         <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            Text="Registrar Medicamento0"
+            FontSize="24"
+            TextColor="White"
+            BackgroundColor="Blue"
+            HorizontalOptions="FillAndExpand"
+            HorizontalTextAlignment="Center"
+            Padding="20"/>
+
+        <Label x:Name="lblBienvenido"
+               Text="Bienvenido: Nombre y Apellido"
+               FontSize="20"
+               FontAttributes="Bold"
+               TextColor="Blue"
+               HorizontalOptions="Center"
+               Grid.Row="1"
+               Grid.Column="0"/>
+        <Grid RowSpacing="10" ColumnSpacing="10"
+              <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Entry x:Name="txtNombreMedicamento"
+                   Grid.Row="0"
+                   Placeholder="Nombre del Medicamento"
+                   FontSize="16"/>
+
+            <Entry x:Name="txtPresentacion"
+                   Grid.Row="1"
+                   Placeholder="Presentacion"
+                   FontSize="16"/>
+
+            <Entry x:Name="txtIndicaciones"
+                   Grid.Row="2"
+                   Placeholder="Indicaciones"
+                   FontSize="16"/>
+
+            <DatePicker x:Name="datepickerFechaExpiracion"
+                        Grid.Row="3"
+                        Format="dd/mm/yyyy"
+                        FontSize="16"
+                        WidthRequest="300"
+                        HorizontalOptions="Start"
+                        DateSelected="datepickerFechaExpiracion_DateSelect"/>
+            <Label x:Name="lblFechaSeleccionada"
+                   Grid.Row="4"
+                   Text="Selecciona una Fecha"
+                   FontSize="16"
+                   TextColor="Blue"
+                   HorizontalOptions="Center"/>
+
+            <Entry x:Name="txtUbicacionFarmacia"
+                   Grid.Row="5"
+                   Placeholder="Ubicacion en la farmacia"
+                   FontSize="16"/>
+
+            <Entry x:Name="txtPrecio"
+                   Grid.Row="6"
+                   Placeholder="Precio"
+                   FontSize="16"
+                   Keyboard="Numeric"/>
+
+        </Grid>
+
+        <Button x:Name="btnCrearMedicamento"
+                Text="Crear Medicamento"
+                BackgroundColor="#28A745"
+                TextColor="White"
+                FontSize="16"
+                CornerRadius="8"
+                Clicked="btnCrearMedicamento_Clicked"/>
+
+        <Button x:Name="btnSalir"
+                Text="Salir"
+                BackgroundColor="#F44336"
+                TextColor="White"
+                FontSize="16"
+                CornerRadius="8"
+                Clicked="btnSalir_Clicked"/>
+
+
     </VerticalStackLayout>
 </ContentPage>
