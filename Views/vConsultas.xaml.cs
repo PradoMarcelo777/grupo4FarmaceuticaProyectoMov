@@ -30,7 +30,7 @@ public partial class vConsultas : ContentPage
         NavigationPage.SetHasBackButton(this, false);
     }
 
-    private void Button_Clicked(object sender, EventArgs e)
+    private async void Button_Clicked(object sender, EventArgs e)
     {
         string pregunta = txtConsulta.Text;
 
@@ -140,12 +140,64 @@ public partial class vConsultas : ContentPage
 
     }
 
-    private void btnGuardar_Clicked(object sender, EventArgs e)
+    private async void btnGuardar_Clicked(object sender, EventArgs e)
     {
+        // Verifica que la consulta haya sido realizada y que haya una respuesta
+        if (string.IsNullOrWhiteSpace(txtConsulta.Text) || lblRespuesta.FormattedText == null)
+        {
+            await DisplayAlert("Error", "No hay consulta realizada para guardar.", "OK");
+            return;
+        }
 
+        string pregunta = txtConsulta.Text;  // Pregunta que el usuario envi?
+
+        // Obtener el texto plano de los Spans en FormattedText
+        StringBuilder respuestaBuilder = new StringBuilder();
+        foreach (var span in lblRespuesta.FormattedText.Spans)
+        {
+            respuestaBuilder.Append(span.Text); // Concatenar el texto de cada Span
+        }
+        string respuesta = respuestaBuilder.ToString();  // El contenido de la respuesta como texto plano
+
+        // Creamos el objeto RegistroConsultas
+        var requestBody = new
+        {
+            contenido = respuesta,  // Guardamos la respuesta que obtuviste
+            usuario = new
+            {
+                id = IdUsuario  // El ID del usuario que realiza la consulta
+            }
+        };
+
+        string apiUrl = $"http://{Config.LocalMachineIp}:8080/registro/crear"; // URL para guardar la consulta
+
+        try
+        {
+            // Serializar el cuerpo a JSON
+            var jsonRequest = JsonSerializer.Serialize(requestBody);
+            var content = new StringContent(jsonRequest, Encoding.UTF8, "application/json");
+
+            // Enviar la solicitud HTTP POST para guardar la consulta
+            var response = await _httpClient.PostAsync(apiUrl, content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                await DisplayAlert("?xito", "La consulta ha sido guardada correctamente.", "OK");
+            }
+            else
+            {
+                string errorContent = await response.Content.ReadAsStringAsync();
+                Console.WriteLine($"Error al guardar la consulta: {errorContent}");
+                await DisplayAlert("Error", "No se pudo guardar la consulta. Int?ntalo m?s tarde.", "OK");
+            }
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert("Error", $"Ocurri? un error al guardar la consulta: {ex.Message}", "OK");
+        }
     }
 
-    private void btnSalir_Clicked(object sender, EventArgs e)
+    private async void btnSalir_Clicked(object sender, EventArgs e)
     {
         var opciones = new Opciones(usuarioConsultaChat);
         await Navigation.PushAsync(opciones);

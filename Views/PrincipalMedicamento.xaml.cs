@@ -74,13 +74,13 @@ public partial class PrincipalMedicamento : ContentView
         Navigation.PushAsync(new Medicamento(usuarioMedicamento));
     }
 
-    private void btnSalir_Clicked(object sender, EventArgs e)
+    private async void btnSalir_Clicked(object sender, EventArgs e)
     {
         var opciones = new Opciones(usuarioMedicamento);
         await Navigation.PushAsync(opciones);
     }
 
-    private void listaMedicamentos_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+    private async void listaMedicamentos_ItemSelected(object sender, SelectedItemChangedEventArgs e)
     {
         {
             // Verifica si se ha seleccionado un item y lo obtiene
