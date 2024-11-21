@@ -5,7 +5,7 @@ using System.Text;
 
 namespace grupo4FarmaceuticaProyectoMov.Views;
 
-public partial class vActualizarEliminar : ContentView
+public partial class vActualizarEliminar : ContentPage
 {
     
     private Usuario usuarioActualizar { get; set; }
@@ -31,7 +31,7 @@ public partial class vActualizarEliminar : ContentView
         
     
 
-    private void btnActualizar_Clicked(object sender, EventArgs e)
+    private async void btnActualizar_Clicked(object sender, EventArgs e)
     {
         // Validar nombre del medicamento
         if (string.IsNullOrWhiteSpace(txtNombreMedicamento.Text))
@@ -123,20 +123,20 @@ public partial class vActualizarEliminar : ContentView
         }
     }
 
-    private void datepickerFechaExpiracion_DateSelected(object sender, DateChangedEventArgs e)
+    private async void datepickerFechaExpiracion_DateSelected(object sender, DateChangedEventArgs e)
     {
         // Lógica cuando la fecha cambia
         lblFechaSeleccionada.Text = $"Fecha seleccionada: {e.NewDate:dd/MM/yyyy}";
     }
 
 
-    private void btnSalir_Clicked(object sender, EventArgs e)
+    private async void btnSalir_Clicked(object sender, EventArgs e)
     {
       var opciones = new Opciones(usuarioActualizar);
         await Navigation.PushAsync(opciones);
     }
 
-    private void btnEliminar_Clicked(object sender, EventArgs e)
+    private async void btnEliminar_Clicked(object sender, EventArgs e)
     {
         // Confirmar si el usuario realmente quiere eliminar el medicamento
         bool confirmacion = await DisplayAlert("Confirmar Eliminación", "¿Estás seguro de que deseas eliminar este medicamento?", "Sí", "No");

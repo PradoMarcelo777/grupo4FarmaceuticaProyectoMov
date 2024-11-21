@@ -2,10 +2,11 @@ using grupo4FarmaceuticaProyectoMov.Utils;
 using System.Collections.ObjectModel;
 using System.Text.Json;
 using System.Text;
+using grupo4FarmaceuticaProyectoMov.Models;
 
 namespace grupo4FarmaceuticaProyectoMov.Views;
 
-public partial class PrincipalMedicamento : ContentView
+public partial class PrincipalMedicamento : ContentPage
 {
     // Propiedades para almacenar los datos del usuario
     public int IdUsuario { get; set; }
@@ -69,18 +70,18 @@ public partial class PrincipalMedicamento : ContentView
             await DisplayAlert("Error", $"Hubo un problema al obtener los medicamentos: {ex.Message}", "OK");
         }
     }
-    private void btnInsertar_Clicked(object sender, EventArgs e)
+    private async void btnInsertar_Clicked(object sender, EventArgs e)
     {
         Navigation.PushAsync(new Medicamento(usuarioMedicamento));
     }
 
-    private void btnSalir_Clicked(object sender, EventArgs e)
+    private async void btnSalir_Clicked(object sender, EventArgs e)
     {
         var opciones = new Opciones(usuarioMedicamento);
         await Navigation.PushAsync(opciones);
     }
 
-    private void listaMedicamentos_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+    private async void listaMedicamentos_ItemSelected(object sender, SelectedItemChangedEventArgs e)
     {
         {
             // Verifica si se ha seleccionado un item y lo obtiene
