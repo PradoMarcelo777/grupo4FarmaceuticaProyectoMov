@@ -72,13 +72,24 @@ public partial class vRegistro : ContentPage
         }
     }
 
-    private void listaConsultas_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+    private async void listaConsultas_ItemSelected(object sender, SelectedItemChangedEventArgs e)
     {
+        // Verifica si se ha seleccionado un item y lo obtiene
+        if (e.SelectedItem != null)
+        {
+            // Obtiene el objeto seleccionado (RegistroConsultas)
+            var consultaSeleccionada = (RegistroConsultas)e.SelectedItem;
 
+        }
     }
 
-    private void btnSalir_Clicked(object sender, EventArgs e)
+    private async void btnSalir_Clicked(object sender, EventArgs e)
     {
+        // Eliminar cualquier valor almacenado en las Preferences
+        Preferences.Remove("username");
+        Preferences.Remove("password");
 
+        var opciones = new Opciones(usuarioRegistroConsulta);
+        await Navigation.PushAsync(opciones);
     }
 }

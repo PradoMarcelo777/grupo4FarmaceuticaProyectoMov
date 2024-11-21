@@ -1,7 +1,8 @@
 ﻿using grupo4FarmaceuticaProyectoMov.Utils;
 using System.Text;
 using grupo4FarmaceuticaProyectoMov.Models;
-using System.Text;
+using Newtonsoft.Json;
+
 
 
 namespace grupo4FarmaceuticaProyectoMov.Views;
@@ -92,7 +93,7 @@ public partial class Login : ContentPage
             // Crear un objeto Usuario vac�o o con valores por defecto
             var usuario = new Usuario
             {
-                Id = 0, // Si es un nuevo usuario, puedes poner 0 o un valor predeterminado
+                id = 0, // Si es un nuevo usuario, puedes poner 0 o un valor predeterminado
                 nombre = "",
                 apellido = "",
                 username = "",
