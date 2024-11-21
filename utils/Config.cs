@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace grupo4FarmaceuticaProyectoMov.Utils
 {
-    internal class Config
+    public static class Config
     {
         public static string LocalMachineIp = "192.168.100.35";
 
